@@ -1,0 +1,21 @@
+apiVersion: kubeadm.k8s.io/v1beta4
+kind: ClusterConfiguration
+kubernetesVersion: "v1.31.0"
+networking:
+  podSubnet: "192.168.8.0/24"  # Optional, adjust based on your CNI requirements
+
+---
+
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+cgroupDriver: "systemd"
+
+
+
+#apiVersion: kubeadm.k8s.io/v1beta4  # Ensure this matches the desired version
+#kind: ClusterConfiguration           # Required field
+#kubernetesVersion: "v1.31.1"       # Specify your desired Kubernetes version
+#networking:
+#  podSubnet: "192.168.8.0/24"       # Define the pod network CIDR
+#  serviceSubnet: "10.96.0.0/12"     # Default service subnet
+#  dnsDomain: "cluster.local"
