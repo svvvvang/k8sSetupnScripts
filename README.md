@@ -1,12 +1,19 @@
-# k8sSetupnScripts
-Contains set up and scripts to run k8s
-All configurations are using default
-Customised configs will be updated later
+# k8sInstallationScript.sh
+Kubernetes Installation Setup Script for RHEL 9
+Script is universal to both control and worker node
 
-Reference Doc
-https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+This script automates the installation of Kubernetes on Red Hat Enterprise Linux 9, leveraging the official Kubernetes documentation as a reference. It installs the following components:
 
-The followings are used 
-kubeadm
-containerd
-cilium
+    Container Runtime: Containerd v1.7.22
+    Kubernetes Version: v1.31
+    Runc Version: v1.1.15
+    CNI Plugin: v1.5.1 (amd64)
+
+Features:
+
+    Disables swap and sets SELinux to permissive mode.
+    Configures necessary firewall ports for Kubernetes.
+    Installs required packages (socat, wget, tar).
+    Downloads and installs containerd and its dependencies.
+    Configures the containerd and kubelet cgroup drivers.
+    Verifies checksums for downloaded binaries to ensure integrity.
