@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Set up script to install Kubernetes using Kubernetes documentation as reference.
 # https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 
