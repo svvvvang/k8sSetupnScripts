@@ -17,3 +17,8 @@ Features:
     Downloads and installs containerd and its dependencies.
     Configures the containerd and kubelet cgroup drivers.
     Verifies checksums for downloaded binaries to ensure integrity.
+
+# kubeadmconfig.yaml
+This provides configurations for setting up a Kubernetes cluster using kubeadm.
+Use this to create cluster after kubernetes is installed.
+To use run sudo kubeadm init --config kubeadmconfig.yaml
