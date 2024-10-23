@@ -21,7 +21,7 @@ sudo tar xzvf cilium-linux-${CLI_ARCH}.tar.gz -C /usr/local/bin
 rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 
 # Create folder for cilium if it doesn't exist
-mkdir -p /hostbin
+sudo mkdir -p /hostbin
 
 # Install Cilium
 cilium install
