@@ -12,3 +12,6 @@ mkdir -p /hostbin
 
 # Install cilium
 cilium install
+
+# Change owner to root /usr/local/bin/cilium
+chown root:root /usr/local/bin/cilium
