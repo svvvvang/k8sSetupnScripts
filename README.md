@@ -1,3 +1,12 @@
+Exe the following in sequence to install K8s with cilium as cni-plugin
+1. bash +x k8sInstallationScript.sh
+2. sudo kubeadm init --config kubeadmconfig.yaml
+3. mkdir -p $HOME/.kube
+   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   sudo chown $(id -u):$(id -g) $HOME/.kube/config
+4. bash +x CiliumInstallationScript
+
+
 # k8sInstallationScript.sh
 Kubernetes Installation Setup Script for RHEL 9
 Script is universal to both control and worker node
