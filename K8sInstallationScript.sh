@@ -70,12 +70,13 @@ sudo tar Cxzvf /usr/local containerd-1.7.22-linux-amd64.tar.gz
 # To start containerd via systemd, download containerd.service
 sudo mkdir -p /usr/local/lib/systemd/system/
 cd /usr/local/lib/systemd/system/
-wget -Nv https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
+sudo wget -Nv https://raw.githubusercontent.com/containerd/containerd/main/containerd.service
 
 # Run containerd.service
 sudo systemctl daemon-reload && sudo systemctl enable --now containerd
 
 # Download runc
+cd ~/Downloads/
 wget -Nv https://github.com/opencontainers/runc/releases/download/v1.1.15/runc.amd64
 wget -Nv https://github.com/opencontainers/runc/releases/download/v1.1.15/runc.sha256sum
 
@@ -115,12 +116,12 @@ sudo mkdir -p /opt/cni/bin
 sudo tar Cxzvf /opt/cni/bin/ cni-plugins-linux-amd64-v1.5.1.tgz
 
 # Enure /opt/cni is owned by root
-chown root:root bin/
+sudo chown root:root bin/
 
 # Use containerd to generate a default config file
 sudo mkdir -p /etc/containerd/
 #sudo containerd config default | sudo tee /etc/containerd/config.toml
-containerd config default > /etc/containerd/config.toml
+sudo containerd config default > /etc/containerd/config.toml
 
 # Configure systemd cgroup driver
 #sudo tee -a /etc/containerd/config.toml > /dev/null <<EOF
