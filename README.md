@@ -23,5 +23,5 @@ This provides configurations for setting up a Kubernetes cluster using kubeadm.
 Use this to create cluster after kubernetes is installed.
 To use run sudo kubeadm init --config kubeadmconfig.yaml
 
-#CiliumInstallationScript
+# CiliumInstallationScript
 Automates the installation of the Cilium CLI, download the latest version and verify its integrity with SHA256 checksums, and extract binary to /usr/local/bin. Simply clone the repository, make the script executable, and run it to install Cilium. 
