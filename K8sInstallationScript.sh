@@ -120,7 +120,7 @@ sudo chown root:root /opt/cni/bin
 
 # Use containerd to generate a default config file
 sudo mkdir -p /etc/containerd/
-sudo containerd config default | sudo tee /etc/containerd/config.toml
+containerd config default | sudo tee /etc/containerd/config.toml
 #sudo containerd config default > /etc/containerd/config.toml
 
 # Configure systemd cgroup driver
