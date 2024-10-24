@@ -5,6 +5,7 @@ Exe the following in sequence to install K8s with cilium as cni-plugin
    sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
    sudo chown $(id -u):$(id -g) $HOME/.kube/config
 4. bash +x CiliumInstallationScript
+5. cilium status --wait # Wait for few minutes for cilium to get all pods up
 
 
 # k8sInstallationScript.sh
