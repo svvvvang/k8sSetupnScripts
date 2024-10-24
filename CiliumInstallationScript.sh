@@ -24,7 +24,7 @@ rm cilium-linux-${CLI_ARCH}.tar.gz{,.sha256sum}
 sudo mkdir -p /hostbin
 
 # Install Cilium
-sudo cilium install
+cilium install
 
 # Change owner to root for /usr/local/bin/cilium
 sudo chown root:root /usr/local/bin/cilium
