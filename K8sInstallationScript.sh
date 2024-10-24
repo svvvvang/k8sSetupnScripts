@@ -116,12 +116,12 @@ sudo mkdir -p /opt/cni/bin
 sudo tar Cxzvf /opt/cni/bin/ cni-plugins-linux-amd64-v1.5.1.tgz
 
 # Enure /opt/cni is owned by root
-sudo chown root:root bin/
+sudo chown root:root /opt/cni/bin
 
 # Use containerd to generate a default config file
 sudo mkdir -p /etc/containerd/
-#sudo containerd config default | sudo tee /etc/containerd/config.toml
-sudo containerd config default > /etc/containerd/config.toml
+sudo containerd config default | sudo tee /etc/containerd/config.toml
+#sudo containerd config default > /etc/containerd/config.toml
 
 # Configure systemd cgroup driver
 #sudo tee -a /etc/containerd/config.toml > /dev/null <<EOF
