@@ -1,3 +1,4 @@
+# K8s for control node and create cluster
 Exe the following in sequence to install K8s with cilium as cni-plugin
 1. bash +x k8sInstallationScript.sh
 2. sudo kubeadm init --config kubeadmconfig.yaml
@@ -6,6 +7,14 @@ Exe the following in sequence to install K8s with cilium as cni-plugin
    sudo chown $(id -u):$(id -g) $HOME/.kube/config
 4. bash +x CiliumInstallationScript
 5. cilium status --wait # Wait for few minutes for cilium to get all pods up
+
+# K8s for worker node and join cluster
+Exe the following in sequence to install K8s
+1. bash +x k8sInstallationScript.sh
+2. (optional) sudo hostnamectl set-hostname <newhostname>
+2a. (optional) sudo vi /etc/hosts
+add <ip adress> <newhostname>
+3. sudo kubeadm join <master-ip>:<port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
 
 
 # k8sInstallationScript.sh
